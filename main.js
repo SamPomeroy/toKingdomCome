@@ -23,3 +23,36 @@ function removeFirstLi() {
     element.style.fontSize = `${size}`
   }
 adjustTextSize('thing-2', '5em')
+
+function appendToArguments(element) {
+    const newArgument = document.querySelector('#arguments');
+    newArgument.appendChild(element);
+  }
+ var newElement = document.createElement('img')
+ appendToArguments(newElement)
+
+ function changeHeight(image){
+  document.querySelector(`${image}`).style.height = '30px'
+ }
+ changeHeight('#image-1')
+
+ function makeInvis(id){
+  document.querySelector(`${id}`).classList.add('invisible')
+ }
+makeInvis('#thing-c')
+
+function makeNewElement(text){
+  let newItem = document.createElement('li')
+  newItem.innerText = `${text}`
+  return newItem
+}
+let newText = makeNewElement('One last thing')
+appendToArguments(newText)
+
+function changeHeader(size, text){
+  let newHeading = document.createElement(`h${size}`)
+  newHeading.innerText = `${text}`
+  return newHeading
+}
+let newHeader = changeHeader('20', 'Another Header')
+appendToArguments(newHeader)
