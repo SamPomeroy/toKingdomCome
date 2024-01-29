@@ -19,10 +19,12 @@ function removeFirstLi() {
   removeFirstLi()
   
   function adjustTextSize(id, size) {
-    var element = document.getElementById(id)
+    const element = document.querySelector('#' + id)
     element.style.fontSize = `${size}`
   }
-adjustTextSize('thing-2', '5em')
+adjustTextSize('thing-2', '5pt')
+adjustTextSize('image-area', '25pt')
+
 
 function appendToArguments(element) {
     const newArgument = document.querySelector('#arguments');
@@ -31,15 +33,27 @@ function appendToArguments(element) {
  var newElement = document.createElement('img')
  appendToArguments(newElement)
 
- function changeHeight(image){
-  document.querySelector(`${image}`).style.height = '30px'
- }
- changeHeight('#image-1')
+//  function changeHeight(image){
+//   document.querySelector(`${image}`).style.height = '30px'
+//  }
+//  changeHeight('#image-1')
+
+function changeImage(element){
+  element.style.height = '30px'
+}
+const adjustHeight = document.querySelector('#image-1')
+changeImage(adjustHeight)
 
  function makeInvis(id){
   document.querySelector(`${id}`).classList.add('invisible')
  }
 makeInvis('#thing-c')
+// function makeInvis(element){
+//   element.classList.add('invisible')
+// }
+// let firstImg = document.querySelector(`#image-1`)
+// makeInvis(firstImg)
+
 
 function makeNewElement(text){
   let newItem = document.createElement('li')
